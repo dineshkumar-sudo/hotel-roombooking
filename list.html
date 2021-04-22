@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination</title>
+    <link rel="stylesheet" href="styles/list.css" >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header>
+        
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list.html">Destination</a></li>
+                <li><a href="bookings.html">Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="details">
+        <h3>Trips to <span>TAMILNADU</span></h3>
+        <div class="search">
+            <div class="destination input">
+                <span>
+                    Destination
+                </span>
+                <input type="text" id="dest">
+            </div>
+            <div class="price input">
+                <span>
+                    Price
+                </span>
+                <div class="double-input">
+                    <input type="text" id="price-1">
+                    <input type="text" id="price-2">
+                </div>
+            </div>
+            <div class="departure input">
+                <span>
+                    Checkin
+                </span>
+                <input type="date" id="checkin">
+            </div>
+            <div class="duration input">
+                <span>
+                    Duration
+                </span>
+                <input type="number" id="days">
+            </div>
+        </div>
+    </div>
+
+<div class="list-cover">
+    <div class="list">
+        <div class="main" onclick="window.location ='hotel.html'">
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"  height="250px" width="300px" alt="image">
+            </div>
+            <div class="description">
+                <h3><span  class="location"></span></h3>
+                <p class="hr">Super Week tripend to  from 19-04 to 29 19-04
+                    stay in hotel included with breakfast and storage luggages.
+                </p>
+                <p class="hr">Deal includes</p>
+                <p class="output-days">7 Nights,Departure on 31 sunday</p>
+            </div>
+    
+        
+        </div>
+        <div class="main" onclick="window.location ='hotel.html'">
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1536858974309-969976df0d4d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGx1eHVyeSUyMHJvb218ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60s"  height="250px" width="300px" alt="image">
+            </div>
+    
+            <div class="description">
+                <h3><span  class="location"></span></h3>
+                <p class="hr">Super Week tripend to  from 19-04 to 29 19-04
+                    stay in hotel included with breakfast and storage luggages.
+                </p>
+                <p class="hr">Deal includes</p>
+                <p class="output-days">7 Nights,Departure on 31 sunday</p>
+            </div>
+        </div>
+        <div class="main" onclick="window.location ='hotel.html'">
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1574118139440-94aef80059b5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGx1eHVyeSUyMHJvb218ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"  height="250px" width="300px" alt="image">
+            </div>
+    
+            <div class="description">
+                <h3><span  class="location"></span></h3>
+                <p class="hr">Super Week tripend to  from 19-04 to 29 19-04
+                    stay in hotel included with breakfast and storage luggages.
+                </p>
+                <p class="hr">Deal includes</p>
+                <p class="output-days">7 Nights,Departure on 31 sunday</p>
+            </div>
+        </div>
+        <div class="main" onclick="window.location ='hotel.html'">
+            <div class="hotel-image">
+                <img src="https://images.unsplash.com/photo-1489171078254-c3365d6e359f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGx1eHVyeSUyMHJvb218ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"  height="250px" width="300px" alt="image">
+            </div>
+    
+            <div class="description">
+                <h3><span  class="location"></span></h3>
+                <p class="hr">Super Week tripend to  from 19-04 to 29 19-04
+                    stay in hotel included with breakfast and storage luggages.
+                </p>
+                <p class="hr">Deal includes</p>
+                <p class="output-days">7 Nights,Departure on 31 sunday</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const searchString = localStorage.getItem('search');
+    let search;
+    if(searchString){
+        search = JSON.parse(searchString);
+        document.getElementById('dest').value = search.dest
+        document.getElementById('price-1').value = search.price1
+        document.getElementById('price-2').value = search.price2
+        document.getElementById('checkin').value = search.checkin
+        document.getElementById('days').value = search.days
+
+        const hotels = document.getElementsByClassName('main')
+        for (let i = 0; i < hotels.length; i++) {
+            const element = hotels[i];
+            element.getElementsByClassName("location")[0].innerHTML = search.dest
+            element.getElementsByClassName("output-days")[0].innerHTML = search.days+" Nights, Checkin by " + new Date(search.checkin).toLocaleDateString() 
+            
+        }
+    }
+</script>
+  </body>
+</html>

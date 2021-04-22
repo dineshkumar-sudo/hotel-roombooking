@@ -1,0 +1,196 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    outline: none !important;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252a;
+  }
+  
+  .logo {
+    cursor: pointer;
+    order: 3;
+    margin-left: auto;
+  }
+  .logo img{
+    width: 100px;
+    height: 50px;
+  }
+  nav {
+    order: 1;
+  }
+  .nav-side{
+    display: flex;
+  }
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li:nth-child(1) {
+    padding: 0 20px 0 0;
+  }
+  
+  .nav__links li a {
+    transition: all 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    color: #0088a9;
+  }
+  
+  .cta {
+    order: 2;
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+  }  
+.details h3{
+    margin-left: 100px;
+    color: #003866;
+    font-weight: normal;
+}
+.search{
+    margin: auto;
+    padding: 10px;
+    width: fit-content;
+    display: flex;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px silver;
+}
+.input{
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.input span{
+    font-size: 14px;
+}
+
+.input input{
+    padding: 10px;
+    border:none;
+    border-bottom: 1px solid #003866;
+}
+
+/* types of holidays */
+
+.ulist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    height : 300px;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+  }
+  
+  .list a {
+    display: block;
+    color: #000;
+    padding: 16px 16px;
+    text-decoration: none;
+  }
+  
+  .list {
+    text-align: center;
+    border-bottom: 1px solid #555;
+    padding-bottom: 30px;
+  }
+  
+  .list:last-child {
+    border-bottom: none;
+  }
+  
+  .list a.active {
+    background-color: #FFB6C1;
+    color: white;
+  }
+  
+  .list a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+
+  /* hotel-details */
+.departure input{
+    padding: 10px 10px 5px 10px;
+}
+.double-input {
+display: flex;
+}
+.double-input input{
+    margin: 0 10px;
+    width: 50px;
+}
+.double-input input{
+    margin: 0 10px;
+    width: 50px;
+}
+.list-cover{
+    margin: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.list{
+    width: 60%;
+    margin: auto;
+}
+.main{
+    margin: 20px 0px;
+    display: flex;
+    box-shadow: 1px 1px 20px silver;
+    border-radius: 4px;
+    transition: all 500ms;
+}
+.main:hover{
+    transform: scale(1.03);
+}
+.hotel-image{
+    width: 50%;
+}
+.hotel-image,.description{
+    padding: 20px;
+}
+.description .hr{
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+}
+.description .hr:nth-child(2){
+    font-size: 14px;
+}

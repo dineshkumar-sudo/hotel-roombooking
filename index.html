@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hotel-Room Booking App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles/home.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body>
+        <header>
+            
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="list.html">Destination</a></li>
+                    <li><a href="bookings.html">Bookings</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="mobile__menu" class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay__content">
+                <a href="index.html">Home</a>
+                <a href="list.html">Destination</a>
+                <a href="hotel.html">Confirmation</a>
+            </div>
+        </div>
+
+        
+          
+<div class="quotes-cover">
+    
+    <div class="quotes">
+        <h2>Spacius and Hygenic Rooms</h2>
+    </div>
+
+    
+    <div class="search">
+        <div class="destination input">
+            <span>
+                Destination
+            </span>
+            <input type="text" id="dest">
+        </div>
+        <div class="price input">
+            <span>
+                Price
+            </span>
+            <div class="double-input">
+                <input type="number" id="price-1">
+                <input type="number"  id="price-2">
+            </div>
+        </div>
+        <div class="departure input">
+            <span>
+                Checkin
+            </span>
+            <input type="date" id="checkin">
+        </div>
+        <div class="duration input">
+            <span>
+                Duration
+            </span >
+            <input type="number" id="days">
+        </div>
+        <div class="search-btn">
+            <a href="list.html" id="home-search">Search</a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const homeSearch = document.getElementById('home-search')
+homeSearch.addEventListener('click',(e)=>{
+  e.preventDefault();
+  const dest = document.getElementById('dest').value
+  const price1 = document.getElementById('price-1').value
+  const price2 = document.getElementById('price-2').value
+  const checkin = document.getElementById('checkin').value
+  const days = document.getElementById('days').value
+  const search = {
+      dest,
+      price1,
+      price2,
+      checkin,
+      days
+  }
+  if(dest && price1 && price2 && checkin && days){
+      localStorage.setItem('search', JSON.stringify(search))
+      window.location = 'list.html'
+  }
+})
+</script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,100 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    outline: none !important;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252a;
+  }
+  
+  .logo {
+    cursor: pointer;
+    order: 3;
+    margin-left: auto;
+  }
+  .logo img{
+    width: 100px;
+    height: 50px;
+  }
+  nav {
+    order: 1;
+  }
+  
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li:nth-child(1) {
+    padding: 0 20px 0 0;
+  }
+  
+  .nav__links li a {
+    transition: all 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    color: #0088a9;
+  }
+  
+  .cta {
+    order: 2;
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+  }  
+  .bookings-cover h3{
+      margin: 50px 0 50px 100px;
+  }
+  .booking{
+      margin: 20px auto;
+      width: 80%;
+      display: flex;
+      align-items: stretch;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 2px 2px 20px silver;
+  }
+  .booking img{
+      width: 350px;
+      height: 250px;
+  }
+  .booking table {
+      margin: 20px;
+      text-align: left;
+      font-size: 14px;
+  }
+  .booking table tr>*{
+      min-width: 100px ;
+      overflow-wrap: anywhere;
+  }

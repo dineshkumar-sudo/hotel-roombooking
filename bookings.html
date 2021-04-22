@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings Page</title>
+    <link rel="stylesheet" href="styles/bookings.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header>
+        
+        <nav>
+            <ul class="nav__links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="list.html">Destination</a></li>
+              <li><a href="bookings.html">Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bookings-cover">
+        <h3>Recent Bookings</h3>
+        <div class="bookings" id="bookings">
+            <!-- <div class="booking">
+                <img src="/assets/taj.jpg" alt="">
+                <table cellspacing="20px">
+                    <tr><th>Booking Id : </th><td id="id">12</td><th>Username : </th><td>Nishanth</td></tr>
+                    <tr><th>Phone : </th><td id="mobile"> 7639877734</td><th>Email : </th><td>Nishanth@shanmugaataaaaaaaahn.comat </td></tr>
+                    <tr><th>Checkin Date : </th><td id="checkin">12</td><th>Checkout Date : </th><td>Nishanth</td></tr>
+                </table>
+            </div> -->
+        </div>
+    </div>
+    <script>
+      const bookingsString = localStorage.getItem('bookings')
+      if(bookingsString){
+        const bookings = JSON.parse(bookingsString).reverse()
+        const bookingsElement = document.getElementById('bookings')
+        bookings.forEach(data => {
+          const booking = document.createElement('div')
+          booking.classList.add('booking')
+          const img = document.createElement('img');
+          img.setAttribute('src', "assets/taj.jpg")
+          img.setAttribute('alt', "img")
+
+          const table = document.createElement('table');
+          table.setAttribute('cellspacing', '20px')
+          const tr1 =document.createElement('tr')
+          const tr2 =document.createElement('tr')
+          const tr3 =document.createElement('tr')
+
+          const th11 =document.createElement('th')
+          const th12 =document.createElement('th')
+          th11.innerHTML = 'Booking Id : '
+          th12.innerHTML = 'Username : '
+
+          const td11 =document.createElement('td')
+          const td12 =document.createElement('td')
+          td11.innerHTML = data.id
+          td12.innerHTML =data.fullname
+
+          const th21 =document.createElement('th')
+          const th22 =document.createElement('th')
+          th21.innerHTML = 'Phone : '
+          th22.innerHTML = 'Email : '
+
+          const td21 =document.createElement('td')
+          const td22 =document.createElement('td')
+          td21.innerHTML = data.phonenumber
+          td22.innerHTML =data.mail
+
+          const th31 =document.createElement('th')
+          const th32 =document.createElement('th')
+          th31.innerHTML = 'Chekin Date : '
+          th32.innerHTML = 'Checkout Date : '
+
+          const td31 =document.createElement('td')
+          const td32 =document.createElement('td')
+          td31.innerHTML = data.indate
+          td32.innerHTML =data.outdate
+
+          tr1.append(th11, td11, th12 , td12);
+          tr2.append(th21, td21, th22 , td22);
+          tr3.append(th31, td31, th32 , td32);
+
+          table.append(tr1, tr2, tr3);
+
+          booking.append(img,table)
+          bookingsElement.append(booking)
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="styles/forms.css">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+ 
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Room Booking</div>
+    <div class="content">
+      <form action="bookings.html" id="booking-form">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="fullname" required>
+          </div>
+          <div class="input-box">
+            <span class="details">ID</span>
+            <input type="text" placeholder="Enter your ID" name="id" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" name="mail" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" name="phonenumber" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Checkin Date</span>
+            <input type="date" placeholder="Enter your Checkin Date" name="indate" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Checkout Date</span>
+            <input type="date" placeholder="Enter your Checkout Date" name="outdate" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <a id="bookform" href="bookings.html"><input type="submit" value="Book a Room"></a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('booking-form');
+    const bookform = document.getElementById('bookform');
+    form.addEventListener('submit',submitHandler)
+
+    bookform.addEventListener('click', submitHandler)
+
+    function submitHandler(e){
+      e.preventDefault()
+      const booking = {}
+      for (let i = 0; i < form.elements.length; i++) {
+        const element = form.elements[i];
+        if(element.name){
+          booking[element.name] = element.value
+        }
+      }
+      const bookingsString = localStorage.getItem('bookings') 
+      
+      let bookings;
+      if(bookingsString){
+         bookings = JSON.parse(bookingsString)
+      }
+      else{
+        bookings = []
+      }
+     
+      
+        
+      bookings.push(booking)
+      localStorage.setItem('bookings',JSON.stringify(bookings))
+      window.location = 'bookings.html'
+    }
+  </script>
+</body>
+</html>
